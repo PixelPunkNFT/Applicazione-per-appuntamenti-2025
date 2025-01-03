@@ -10,12 +10,6 @@ Un'applicazione web moderna e completa per la gestione professionale degli appun
   - Sistema di ruoli (utente/amministratore/operatore)
   - Protezione avanzata delle rotte
 
-- **Sistema di Abbonamenti**
-  - Integrazione completa con Stripe
-  - Gestione abbonamenti ricorrenti
-  - Pannello di gestione abbonamenti per utenti
-  - Verifica automatica dello stato dell'abbonamento
-  - Accesso a funzionalità premium per abbonati
 
 - **Gestione Appuntamenti**
   - Prenotazione appuntamenti in tempo reale
