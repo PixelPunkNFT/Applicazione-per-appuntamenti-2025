@@ -1,0 +1,86 @@
+.appuntamenti-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #000000;
+}
+
+.appuntamenti-container h2 {
+  color: #000000;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.appuntamenti-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.appuntamento-card {
+  background-color: #fff5f5;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ff6b6b;
+  position: relative;
+}
+
+.appuntamento-card::before {
+  content: "✕";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ff6b6b;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.appuntamento-header {
+  margin-bottom: 10px;
+}
+
+.appuntamento-header h3 {
+  color: #e03131;
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 25px;
+}
+
+.appuntamento-data {
+  color: #495057;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.appuntamento-details {
+  color: #495057;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ffc9c9;
+}
+
+.appuntamento-details p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.appuntamento-details strong {
+  color: #495057;
+  font-weight: 600;
+}
+
+.appuntamento-details p:first-child {
+  color: #e03131;
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: #ff4444;
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+}

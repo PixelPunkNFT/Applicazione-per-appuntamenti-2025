@@ -1,0 +1,383 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-container p {
+    color: #2c3e50;
+    font-size: 1.2em;
+}
+
+.admin-dashboard {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(135deg, #f6f8fb 0%, #e9f0f7 100%);
+}
+
+.sidebar {
+    width: 280px;
+    background: linear-gradient(180deg, #1a2b3c 0%, #2c3e50 100%);
+    padding: 25px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: transparent;
+    overflow-y: auto;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background: #3498db;
+    border-radius: 4px;
+}
+
+/* Stili per i bottoni della sidebar */
+.sidebar-button {
+    width: 100%;
+    padding: 14px 22px;
+    margin-bottom: 12px;
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.button-icon {
+    font-size: 18px;
+    min-width: 20px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-button:hover .button-icon {
+    transform: scale(1.2);
+}
+
+.sidebar-button:hover {
+    background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.2));
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-button.active {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    transform: translateX(0);
+}
+
+.logout-button {
+    margin-top: auto;
+    background: linear-gradient(45deg, #e74c3c, #c0392b) !important;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);
+}
+
+.logout-button:hover {
+    background: linear-gradient(45deg, #c0392b, #a93226) !important;
+    transform: translateY(-2px);
+}
+
+/* Stili per la sezione appuntamenti */
+.appointments-section {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.appointments-section h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.appointments-section h3 {
+    color: #34495e;
+    font-size: 1.4rem;
+    margin: 20px 0;
+    padding: 10px;
+    background: linear-gradient(to right, #f5f9ff, transparent);
+    border-radius: 8px;
+}
+
+/* Stili per le tabelle */
+.appointments-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 15px 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.appointments-table th {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+    text-align: left;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.appointments-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.appointments-table tr:hover td {
+    background-color: #f8fafd;
+    color: #3498db;
+}
+
+.appointments-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Stili per il calendario */
+.react-calendar {
+    width: 100% !important;
+    border: none !important;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.react-calendar__tile {
+    padding: 12px !important;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.react-calendar__tile:hover {
+    background: #e3f2fd !important;
+}
+
+.react-calendar__tile--active {
+    background: #3498db !important;
+    color: white !important;
+}
+
+.giorno-con-appuntamenti {
+    background-color: #e3f2fd;
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Stili per la sezione utenti */
+.users-section {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.add-admin-form {
+    background: linear-gradient(135deg, #ffffff, #f8fafd);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.add-admin-form h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.add-admin-form form {
+    display: flex;
+    gap: 15px;
+}
+
+.add-admin-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e7ff;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.add-admin-form input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    outline: none;
+}
+
+.add-admin-form button {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-admin-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.users-list {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.users-list table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.users-list th {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.users-list td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.users-list tr:hover td {
+    background-color: #f8fafd;
+}
+
+.admin-badge {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(45deg, #f1c40f, #f39c12);
+    padding: 4px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Animazione per il messaggio di successo */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries per la responsività */
+@media (max-width: 768px) {
+    .admin-dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .add-admin-form form {
+        flex-direction: column;
+    }
+
+    .appointments-table {
+        font-size: 0.9rem;
+    }
+
+    .appointments-table th,
+    .appointments-table td {
+        padding: 10px;
+    }
+}

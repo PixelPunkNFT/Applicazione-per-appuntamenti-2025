@@ -1,0 +1,386 @@
+:root[data-theme="light"] {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --nav-background: #f0f0f0;
+  --bg-primary-light: #ffffff;
+  --bg-secondary-light: #f8f8f8;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --accent-primary: #3182ce;
+  --accent-secondary: #4299e1;
+  --container-background: #f8f8f8;
+  --modal-background: #ffffff;
+  --input-background: #f0f0f0;
+  --border-color: #ddd;
+  --hover-background: #e8e8e8;
+  --calendar-background: #ffffff;
+  --calendar-text: #000000;
+  --table-background: #ffffff;
+  --table-border: #ddd;
+  --input-text: #000000;
+  --link-color: #007BFF;
+  --modal-text: #000000;
+}
+
+:root[data-theme="dark"] {
+  --background-color: #000;
+  --text-color: #fff;
+  --nav-background: #1a1a1a;
+  --bg-primary-dark: #1a202c;
+  --bg-secondary-dark: #2d3748;
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --accent-primary: #63b3ed;
+  --accent-secondary: #4299e1;
+  --container-background: #111;
+  --modal-background: #1a1a1a;
+  --input-background: #222;
+  --border-color: #333;
+  --hover-background: #222;
+  --calendar-background: #1a1a1a;
+  --calendar-text: #ffffff;
+  --table-background: #1a1a1a;
+  --table-border: #333;
+  --input-text: #ffffff;
+  --link-color: #fff;
+  --modal-text: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-color: var(--nav-background);
+  color: var(--text-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.App {
+  text-align: center;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+nav {
+  background-color: var(--nav-background);
+  padding: 15px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.1);
+}
+
+nav a {
+  color: var(--link-color);
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: var(--nav-background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--text-color);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stile generale per il contenitore principale */
+.container {
+  max-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--container-background);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.1);
+}
+
+/* Stile per il calendario */
+.react-calendar {
+  max-width: 100%;
+  margin: 0 auto 20px;
+  font-family: Arial, sans-serif;
+  background-color: var(--calendar-background) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--calendar-text) !important;
+}
+
+.react-calendar button {
+  color: var(--calendar-text) !important;
+  
+}
+
+.react-calendar__month-view__days__day {
+  color: var(--calendar-text) !important;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #ff4757 !important;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #666 !important;
+}
+
+/* Stile per i giorni del calendario */
+.react-calendar__tile {
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
+}
+
+/* Stile per il giorno selezionato */
+.react-calendar__tile--active {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* Stile per il giorno corrente */
+.react-calendar__tile--now {
+  background-color: var(--hover-background);
+}
+
+/* Stile per i giorni con appuntamenti */
+.giorno-con-appuntamenti {
+  background-color: rgba(0, 123, 255, 0.2) !important;
+  border: 2px solid #007BFF !important;
+  border-radius: 5px;
+}
+
+.giorno-con-appuntamenti:hover {
+  background-color: rgba(0, 123, 255, 0.4) !important;
+}
+
+/* Stile per il pulsante del calendario */
+.react-calendar__navigation__arrow {
+  background-color: #007BFF;
+  color: var(--calendar-text);
+}
+
+/* Stile per la modale */
+.modal {
+  background-color: var(--modal-background);
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+  max-width: 100%;
+  width: 350px;
+  margin: 20px auto;
+  position: relative;
+  color: var(--modal-text);
+}
+
+.modal h3 {
+  color: #007BFF;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+/* Stile per gli input nella modale */
+.modal input, .modal textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: var(--input-background);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  color: var(--input-text);
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.modal input:focus, .modal textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Stile per i pulsanti nella modale */
+.modal button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #0056b3;
+}
+
+.modal button:last-child {
+  background-color: var(--nav-background);
+  color: var(--text-color);
+}
+
+.modal button:last-child:hover {
+  background-color: var(--hover-background);
+}
+
+/* Stile per la lista degli appuntamenti */
+.appointments-list {
+  list-style: none;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Stile per gli elementi della lista degli appuntamenti */
+.appointment-item {
+  border: 1px solid var(--border-color);
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/* CSS per centrare il contenuto orizzontalmente */
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Stile per la tabella */
+table {
+  width: 90%;
+  max-width: 900px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 30px;
+  background-color: var(--table-background);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.1);
+}
+
+thead {
+  background-color: #007BFF;
+}
+
+th {
+  padding: 15px;
+  text-align: left;
+  font-weight: bold;
+  color: #fff;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--table-border);
+  color: var(--text-color);
+}
+
+tr:hover {
+  background-color: var(--hover-background);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Stili per il select */
+select {
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: var(--input-background);
+  color: var(--input-text);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 1em;
+}
+
+/* Stili per le opzioni del select */
+select option {
+  font-size: 14px;
+  background-color: var(--input-background);
+  color: var(--input-text);
+  padding: 12px;
+}
+
+h2 {
+  color: #007BFF;
+  font-size: 2em;
+  margin: 30px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

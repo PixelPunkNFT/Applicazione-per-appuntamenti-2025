@@ -1,0 +1,243 @@
+.operators-management {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.operators-management h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.add-operator-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.add-operator-form h3 {
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-operator-form form {
+    display: flex;
+    gap: 10px;
+}
+
+.add-operator-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.add-operator-form button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.add-operator-form button:hover {
+    background-color: #2980b9;
+}
+
+.error-message {
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+.operators-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.operators-list h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.operators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.operator-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.operator-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.operator-info {
+    flex: 1;
+}
+
+.operator-info h4 {
+    color: #2c3e50;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.operator-info p {
+    color: #7f8c8d;
+    margin: 5px 0 15px;
+    font-size: 0.9em;
+}
+
+.operator-services {
+    margin-top: 15px;
+}
+
+.operator-services h5 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.service-item span {
+    flex: 1;
+    color: #2c3e50;
+}
+
+.service-duration {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #7f8c8d;
+    margin: 0 15px;
+}
+
+.remove-service-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 0;
+    font-size: 0.8em;
+}
+
+.remove-service-button:hover {
+    background-color: #c0392b;
+}
+
+.add-service-form {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.add-service-form select,
+.add-service-form input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.add-service-form select {
+    flex: 2;
+}
+
+.add-service-form input {
+    flex: 1;
+    width: 80px;
+}
+
+.add-service-button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+.add-service-button:hover {
+    background-color: #27ae60;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 15px;
+    align-self: flex-start;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+    .add-operator-form form {
+        flex-direction: column;
+    }
+
+    .operators-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .add-service-form {
+        flex-direction: column;
+    }
+
+    .add-service-form select,
+    .add-service-form input {
+        width: 100%;
+    }
+}
