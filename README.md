@@ -1,4 +1,4 @@
-# Sistema di Gestione Appuntamenti e Abbonamenti
+# Sistema di Gestione Appuntamenti e Abbonamenti SAAS
 
 Un'applicazione web moderna e completa per la gestione professionale degli appuntamenti e degli abbonamenti, costruita con React e Node.js.
 
